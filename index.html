@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фикс бага</title>
+  <style>
+    /* Общий сброс */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Класс body: центрирование всего контента */
+    .body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Класс кнопки: красный квадрат с тенью только снизу и справа */
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 180px;
+      height: 70px;
+      background-color: #dc2626;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      /* Тень изначально: только вправо (4px) и вниз (4px), без размытия сверху/слева */
+      box-shadow: 4px 4px 10px rgba(220, 38, 38, 0.3);
+      transition: box-shadow 0.2s, transform 0.15s, background-color 0.2s;
+      margin-bottom: 2rem;
+    }
+
+    .button:hover {
+      background-color: #b91c1c;
+      transform: scale(1.03);
+      /* При наведении тень становится больше: сильнее смещена вправо-вниз и более размыта */
+      box-shadow: 8px 8px 0px rgba(220, 38, 38, 0.45);
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    /* Текст и ссылка под кнопкой */
+    p {
+      font-size: 1rem;
+      color: #555;
+      max-width: 400px;
+      line-height: 1.5;
+    }
+
+    p a {
+      color: #2563eb;
+      text-decoration: underline;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    p a:hover {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body class="body">
+  <a class="button" href="z_altbuffervalues1.es3" download title="Нажмите, чтобы скачать файл">Скачать файл</a>
+  <p>Если вам это было полезно или нужна помощь, то заходите в наш дискорд <a href="https://discord.gg/pnSxKnHksU">https://discord.gg/pnSxKnHksU</a></p>
+</body>
+</html>
